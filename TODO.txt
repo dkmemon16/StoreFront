@@ -1,0 +1,8 @@
+TO DO:
+Insert fake data
+
+put pictures ofr each fake item on server
+
+create pictures table
+
+have everything show up on items page
