@@ -9,13 +9,14 @@
  ?> 
  <form action="CreateAccountResult.php" method="post">
  Email: <input type="text" name="email"><br>
- Password: <input type="text" name="passwd"><br>
+ Password: <input type="password" name="passwd"  required="required"><br>
  Name: <input type="text" name="name"><br>
  Address: <input type="text" name="address"><br>
- Credit Card: <input type="text" name="creditcard"><br>
+  
 
- <input type="submit">
+ <input type="submit" value = "Submit">
  </form>
+
 
  
  </body>

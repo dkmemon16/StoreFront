@@ -3,16 +3,15 @@
   <title>Login</title>
  </head>
  <body>
- <?php echo '<h1>Login</h1>'; 
- 
- #Read user input
- ?> 
+ <h1>Login</h1>
+
  <form action="LoginResult.php" method="post">
  Email: <input type="text" name="email"><br>
- Password: <input type="text" name="passwd"><br>
- <input type="submit">
+ Password: <input type="password" name="passwd"><br>
+ <input type="submit" value = "Submit">
  </form>
-
  
+ 
+
  </body>
 </html>

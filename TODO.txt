@@ -1,8 +1,26 @@
 TO DO:
-Insert fake data
 
-put pictures ofr each fake item on server
 
-create pictures table
+parse addcc and addda
 
-have everything show up on items page
+
+checkout page
+if user is not logged in "email = guest" then after a guest has ordered, clear guest CC. do not let guests click order history 
+
+
+
+
+orderhistory:
+query all user's past orders
+
+
+orders.php:
+functions listed on the page
+
+
+format the html page and amke it look nice
+
+
+
+
+

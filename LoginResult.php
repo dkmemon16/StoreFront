@@ -1,34 +1,22 @@
 <?php
-//Query the database
-echo '<h1>Login Result</h1>';
+ session_start();
+ include 'Account.php';
+ $conn = connect(); 
+ if(isset($_POST['email'])){
+     $email = strip_tags(mysqli_real_escape_string($conn, $_POST['email']));
+     $password = strip_tags(mysqli_real_escape_string($conn, $_POST['passwd']));
+     
+     $result = VerifyAccount($email, $password);
 
-$dbServerName = "dkmpi.hopto.org";
-$dbUsername = "remoteUser";
-$dbPassword = "GoodThinking45!";
-$dbName = "StoreFront";
-
-// create connection
-$conn = new mysqli($dbServerName, $dbUsername, $dbPassword, $dbName);
-
-# check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-# echo "Connected successfully";
-?>
- 
- <?php 
- // check if it exists
- 
- $email = $_POST['email'];
- $passwd = $_POST['passwd'];
- $sql = "SELECT email FROM Accounts WHERE email = '$email'  AND passwd = '$passwd'";
-
- $result = $conn->query($sql);
- if ($result->num_rows > 0) {
-     echo 'Login Successful';
+     if ($result) {
+         $_SESSION['logged_in_user_email'] = $email;
+         header("Location: index.php");
+     }
+     else{
+        echo 'Incorrect Email/Password';
+     }
  }
- else 
-     echo 'Login Failed';
-
+ else{
+     echo 'Error: No email entered';
+ }
  ?>
